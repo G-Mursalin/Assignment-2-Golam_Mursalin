@@ -1,0 +1,304 @@
+/*------------------------------------*\
+  #CSS VARIABLES
+\*------------------------------------*/
+:root {
+  --color-primary: #ff3366;
+  --color-primary-dark: #ba265d;
+
+  --color-grey-light-1: #757585;
+
+  --color-grey-dark-1: #3a3a3a;
+  --color-grey-dark-2: #18191f;
+  --color-grey-dark-3: #000000;
+
+  --shaodow-dark: 14px 9px 17px -2px rgba(0, 0, 0, 0.75);
+  --shaodow-light: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+/*------------------------------------*\
+  #COMMON STYLES
+\*------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: var(--color-grey-dark-1);
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+.set_img_height_width {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section {
+  padding: 5% 10%;
+}
+.fa-arrow-right {
+  margin-left: 0.8rem;
+}
+/*------------------------------------*\
+  #Animation
+\*------------------------------------*/
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: var(--shaodow-dark);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+/*------------------------------------*\
+  #Navigation Section
+\*------------------------------------*/
+.navbar {
+  padding: 5% 10%;
+  padding-bottom: 0;
+}
+.navbar__logo {
+  font-size: 2.4rem;
+}
+/*------------------------------------*\
+  #Heading Section
+\*------------------------------------*/
+.header {
+  padding: 5% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__description {
+  flex: 0 0 50%;
+}
+.header__title {
+  font-size: 5.2rem;
+}
+.header__info {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin: 1.6rem 0;
+}
+.header__btn {
+  border: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #fff;
+  padding: 1rem 2.4rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.header:hover .header__btn {
+  animation: pulsate 1s infinite;
+}
+
+.header__image {
+  background-image: url("../images/Circledesign.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*------------------------------------*\
+  #Collection Section
+\*------------------------------------*/
+
+.collection__heading {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.collection__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+.product {
+  box-shadow: var(--shaodow-light);
+  padding: 1.8rem 1.5rem;
+  border-radius: 5px;
+}
+
+.product__name {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-top: 1.6rem;
+  color: var(--color-grey-dark-2);
+}
+.product__price {
+  font-size: 2.4rem;
+  margin-top: 6px;
+}
+.product__stars {
+  color: #fb8200;
+  margin-top: 6px;
+}
+.product__reating {
+  font-size: 1.4rem;
+  margin-left: 0.8rem;
+}
+.product__info {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 6px;
+  color: var(--color-grey-light-1);
+}
+.collection__btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.collection__btn {
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 3rem;
+}
+/*------------------------------------*\
+  #Accessibility Section
+\*------------------------------------*/
+.accessibility {
+  background-color: #232f3e;
+  color: #fff;
+  display: grid;
+  justify-content: center;
+}
+.accessibility__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.accessibility__item {
+  text-align: center;
+  white-space: nowrap;
+}
+.accessibility__item-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.6rem 0 1.4rem 0;
+}
+.accessibility__item-data {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+.accessibility__item-data a {
+  color: #fff;
+}
+.accessibility__item-data a:hover {
+  border-bottom: 1px solid #fff;
+}
+/*------------------------------------*\
+  #Footer Section
+\*------------------------------------*/
+.footer {
+  background-color: #101d2c;
+  color: #ffff;
+  padding: 5rem 60rem;
+  text-align: center;
+  padding: 2% 10%;
+}
+.footer__copyright {
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+.footer__icons {
+  font-size: 0.8rem;
+  margin-top: 1.6rem;
+}
+.footer__icons i {
+  background-color: #344d68;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.footer__icons i:not(:last-child) {
+  margin-right: 1.6rem;
+}
+/*------------------------------------*\
+  #Responsive Design For Tablet 768px
+\*------------------------------------*/
+@media only screen and (max-width: 780px) {
+  /* ****** #Collection Section ******** */
+  .collection__products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* ****** #Collection Section ******** */
+  .accessibility__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* ****** #Footer Section ******** */
+  .footer {
+    padding: 5% 5%;
+  }
+}
+
+/*------------------------------------*\
+  #Responsive Design For Mobile 375px
+\*------------------------------------*/
+
+@media only screen and (max-width: 380px) {
+  /* ****** #Navigation Section ******** */
+  .navbar {
+    text-align: center;
+  }
+  /* ****** #Heading Section ******** */
+  .header {
+    flex-direction: column;
+  }
+  .header__description {
+    text-align: center;
+  }
+  .header__btn {
+    display: block;
+    margin: 0 auto;
+  }
+  .header__image {
+    margin-top: 2rem;
+  }
+  /* ****** #Collection Section ******** */
+
+  .collection__products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* ****** #Collection Section ******** */
+  .accessibility__items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* ****** #Footer Section ******** */
+  .footer {
+    padding: 8% 5%;
+  }
+}
